@@ -1,6 +1,7 @@
 import{getInitialData} from '../utils/helper'
-import{receiveUsers} from '../actions/users'
-import {receiveQuestions} from '../actions/questions'
+import{receiveUsers} from './users'
+import {receiveQuestions} from './questions'
+import {setLoggedInUser} from './loggedInUser'
 
 export function getInitialData(){
     return(dispatch)=>{
