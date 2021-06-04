@@ -1,13 +1,11 @@
-import {simone} from '../src/media/simone.jpg';
-import {descartes} from '../src/media/Descartes.jpg';
-import {nietzsche} from '../src/media/Nietzsche.jpg';
+
 
 
 let users = {
     simonedebeauvoir: {
       id: 'simonedebeauvoir',
       name: 'Simone de Beauvoir',
-      avatarURL: simone,
+      avatarURL: '../public/simone.jpg',
       answers: {
         "8xf0y6ziyjabvozdd253nd": 'optionOne',
         "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -19,7 +17,7 @@ let users = {
     renedescartes: {
       id: 'renedescartes',
       name: 'Rene Descartes',
-      avatarURL: descartes ,
+      avatarURL: '../public/descartes.jpg' ,
       answers: {
         "vthrdm985a262al8qx3do": 'optionOne',
         "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -29,7 +27,7 @@ let users = {
     fredrichnietzche: {
       id: 'fredrichnietzche',
       name: 'Frederich Nietzche',
-      avatarURL: nietzsche,
+      avatarURL: '../nietzsche.jpg',
       answers: {
         "xj352vofupe1dqz9emx13r": 'optionOne',
         "vthrdm985a262al8qx3do": 'optionTwo',
