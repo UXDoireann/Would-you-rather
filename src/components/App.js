@@ -15,12 +15,17 @@ class App extends Component{
 
   render(){
   return (
-    
-    <Dashboard/>
-  
+    <div>
+      {this.props.loading===true?null:<Dashboard/>}
+  </div>
   );
 }
 }
 
+function mapStateToProps({authedUser}){
+  return{
+    loading:authedUser===null
+  }
+}
 
-export default connect()(App);
+export default connect(mapStateToProps)(App);

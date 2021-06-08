@@ -6,7 +6,14 @@ class Dashboard extends Component{
         console.log(this.props)
         return(
             <div>
-                Dashboard
+               <h3 className ='center'>Questions</h3>
+               <ul className ="question-list">
+                   {this.props.questionIds.map((id)=>(
+                       <li key ={id}>
+                           <div>Question Id: {id}</div>
+                       </li>
+                   ))}
+               </ul>
             </div>
         )
     }
@@ -14,7 +21,7 @@ class Dashboard extends Component{
 
 function mapStateToProps({questions}){
     return{
-        questionIds:Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
+        questionIds: Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
     }
 }
 
