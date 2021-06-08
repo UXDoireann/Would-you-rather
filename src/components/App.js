@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-import './App.css';
+import '../App.css';
 import{connect} from 'react-redux'
-import{handleInitialData} from './actions/shared'
+import{handleInitialData} from '../actions/shared'
+import Dashboard from './Dashboard'
 
 
 
@@ -14,9 +15,9 @@ class App extends Component{
 
   render(){
   return (
-    <div >
-    Starter Code
-    </div>
+    
+    <Dashboard/>
+  
   );
 }
 }
