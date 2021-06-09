@@ -25,8 +25,8 @@ let users = {
       questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
     },
     fredrichnietzche: {
-      id: 'fredrichnietzche',
-      name: 'Frederich Nietzche',
+      id: 'fredrichnietzsche',
+      name: 'Frederich Nietzsche',
       avatarURL: '../nietzsche.jpg',
       answers: {
         "xj352vofupe1dqz9emx13r": 'optionOne',
@@ -53,14 +53,14 @@ let users = {
     },
     "6ni6ok3ym7mf1p33lnez": {
       id: '6ni6ok3ym7mf1p33lnez',
-      author: 'fredrichnietzche',
+      author: 'fredrichnietzsche',
       timestamp: 1468479767190,
       optionOne: {
         votes: [],
         text: 'become a superhero',
       },
       optionTwo: {
-        votes: ['fredrichnietzche', 'simonedebeauvoir'],
+        votes: ['fredrichnietzsche', 'simonedebeauvoir'],
         text: 'become a supervillain'
       }
     },
@@ -95,7 +95,7 @@ let users = {
       author: 'renedescartes',
       timestamp: 1489579767190,
       optionOne: {
-        votes: ['fredrichnietzche'],
+        votes: ['fredrichnietzsche'],
         text: 'find $50 yourself',
       },
       optionTwo: {
@@ -105,7 +105,7 @@ let users = {
     },
     "xj352vofupe1dqz9emx13r": {
       id: 'xj352vofupe1dqz9emx13r',
-      author: 'fredrichnietzsche',
+      author: 'fredrichnietzssche',
       timestamp: 1493579767190,
       optionOne: {
         votes: ['fredrichnietzsche'],

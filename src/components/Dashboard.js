@@ -10,7 +10,7 @@ class Dashboard extends Component{
                <h3 className ='center'>Questions</h3>
                <ul className ="question-list">
                    {this.props.questionIds.map((id)=>(
-                       <li key ={id}>
+                       <li key ={id} userPic={this.props.userPic[id.author.avatarURL]}>
                            <div><Question id={id}/></div>
                        </li>
                    ))}
@@ -20,9 +20,15 @@ class Dashboard extends Component{
     }
 }
 
-function mapStateToProps({questions}){
-    return{
-        questionIds: Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
+function mapStateToProps({questions, users}){
+
+ const userPic = users
+ const questionIds = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
+    
+ return{
+        questionIds,
+        userPic
+        
     }
 }
 
