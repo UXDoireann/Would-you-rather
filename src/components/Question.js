@@ -7,20 +7,27 @@ class Question extends Component{
     render(){
         console.log(this.props)
 
+        const {question} = this.props
+
+      
+
         return(
             <div className ='question'>
+                <p>{question.author}</p>
+             <p>{question.optionOne.text}</p>
+             <p>{question.optionTwo.text}</p>
 
             </div>
         )
     }
 }
 
-function mapStateToProps({loggedInUser, users, questions}, {id}){
-    const question = questions[id]
+function mapStateToProps({ questions}, {id}){
+    
 
     return{
-        loggedInUser,
-        questions:question
+      question:questions[id]
+        
 }
 }
 
