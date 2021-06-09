@@ -1,5 +1,6 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
+//import { Avatar } from '@material-ui/core';
 
 
 class Question extends Component{
@@ -9,13 +10,16 @@ class Question extends Component{
 
         const {question} = this.props
 
+        const {author, id, optionOne, optionTwo, timestamp} = question
+
       
 
         return(
             <div className ='question'>
-                <p>{question.author}</p>
-             <p>{question.optionOne.text}</p>
-             <p>{question.optionTwo.text}</p>
+                
+                <p>{author}</p>
+             <p>{optionOne.text}</p>
+             <p>{optionTwo.text}</p>
 
             </div>
         )
@@ -26,7 +30,8 @@ function mapStateToProps({ questions}, {id}){
     
 
     return{
-      question:questions[id]
+      question:questions[id],
+      //users:users[id]
         
 }
 }
