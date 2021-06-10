@@ -6,34 +6,35 @@ import { Avatar } from '@material-ui/core';
 class Question extends Component{
 
     render(){
-        console.log(this.props)
+       console.log(this.props)
 
-        const {question, userPic} = this.props
+        const {question} = this.props
 
-        const { optionOne, optionTwo, author} = question
+        const { optionOne, optionTwo} = question
       
 
       
 
         return(
             <div className ='question'>
-             
-                <p>{author}</p>
+             <Avatar  alt={this.props.author} src={this.props.userPic}/>
+           
+             <h3>{this.props.author}</h3> 
+             <p>Would you rather...?</p> 
              <p>{optionOne.text}</p>
              <p>{optionTwo.text}</p>
-<Avatar alt={author} src={userPic}/>
-            </div>
+</div>
         )
     }
 }
 
 function mapStateToProps({ questions, users}, {id}){
     const question = questions[id];
-    const user = users[question.author];
+   // const user = users[question.author];
 
     return{
      question,
-     user
+     //user
         
 }
 }

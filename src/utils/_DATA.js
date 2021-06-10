@@ -5,7 +5,7 @@ let users = {
     simonedebeauvoir: {
       id: 'simonedebeauvoir',
       name: 'Simone de Beauvoir',
-      avatarURL: '../public/simone.jpg',
+      avatarURL: '../simone.jpg',
       answers: {
         "8xf0y6ziyjabvozdd253nd": 'optionOne',
         "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -17,14 +17,14 @@ let users = {
     renedescartes: {
       id: 'renedescartes',
       name: 'Rene Descartes',
-      avatarURL: '../public/descartes.jpg' ,
+      avatarURL: '../descartes.jpg' ,
       answers: {
         "vthrdm985a262al8qx3do": 'optionOne',
         "xj352vofupe1dqz9emx13r": 'optionTwo',
       },
       questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
     },
-    fredrichnietzche: {
+    fredrichnietzsche: {
       id: 'fredrichnietzsche',
       name: 'Frederich Nietzsche',
       avatarURL: '../nietzsche.jpg',
@@ -105,7 +105,7 @@ let users = {
     },
     "xj352vofupe1dqz9emx13r": {
       id: 'xj352vofupe1dqz9emx13r',
-      author: 'fredrichnietzssche',
+      author: 'fredrichnietzsche',
       timestamp: 1493579767190,
       optionOne: {
         votes: ['fredrichnietzsche'],

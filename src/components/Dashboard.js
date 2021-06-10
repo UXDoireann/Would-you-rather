@@ -4,14 +4,17 @@ import Question from './Question'
 
 class Dashboard extends Component{
     render(){
-       
+
+     // console.log(this.props.questions, this.props.users)
+
         return(
             <div>
                <h3 className ='center'>Questions</h3>
                <ul className ="question-list">
                    {this.props.questionIds.map((id)=>(
-                       <li key ={id} userPic={this.props.userPic[id.author.avatarURL]}>
-                           <div><Question id={id}/></div>
+                       <li key ={id} >
+                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
+                        author={this.props.users[this.props.questions[id].author].name}/></div>
                        </li>
                    ))}
                </ul>
@@ -22,13 +25,13 @@ class Dashboard extends Component{
 
 function mapStateToProps({questions, users}){
 
- const userPic = users
+
  const questionIds = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
     
  return{
-        questionIds,
-        userPic
-        
+        users,
+        questions,
+        questionIds    
     }
 }
 
