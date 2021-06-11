@@ -1,47 +1,26 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
-import { makeStyles } from '@material-ui/core/styles';
-import { Avatar } from '@material-ui/core';
+
 
 
 
 class Question extends Component{
 
     render(){
-       console.log(this.props)
+      // console.log(this.props)
 
         const {question} = this.props
 
         const { optionOne, optionTwo} = question
       
-        const useStyles = makeStyles((theme) => ({
-          root: {
-            display: 'flex',
-            '& > *': {
-              margin: theme.spacing(1),
-            },
-          },
-          small: {
-            width: theme.spacing(3),
-            height: theme.spacing(3),
-          },
-          large: {
-            width: theme.spacing(7),
-            height: theme.spacing(7),
-          },
-        }));
-        
-        export default function ImageAvatars() {
-          const classes = useStyles(); 
-        
-
+     
         return(
             <div className ='question_card'>
 
             <div className='user'>
-            <div className={classes.root}>
-                <Avatar  className='avatar' alt={this.props.author} src={this.props.userPic}/>
-           </div>
+           
+                <img className='avatar' alt={this.props.author} src={this.props.userPic}/>
+          
                <h3>{this.props.author} asks if you'd rather...</h3> 
            </div>
 
@@ -56,7 +35,7 @@ class Question extends Component{
         )
         }
       }
-    }
+    
 
 
 function mapStateToProps({ questions, users}, {id}){
