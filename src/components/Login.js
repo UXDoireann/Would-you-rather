@@ -1,10 +1,40 @@
-import React, {Component} from 'react' 
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {setLoggedInUser} from '../actions/loggedInUser' 
 
 class Login extends Component{
 
+    state={
+        loggedInUser:''
+    }
+
+    
+
+    handleChange=(e)=>{
+        const loggedInUser=e.target.value
+        this.setState(()=>({loggedInUser:loggedInUser}))
+        console.log(loggedInUser)
+       }
+
+   handleSubmit=(e)=>{
+       e.preventDefault()
+       const{loggedInUser}=this.state
+       const{dispatch}=this.props
+       dispatch(setLoggedInUser(loggedInUser))
+   }
+
+  
+
+
     render(){
 
-        console.log(this.props.users)
+     
+        const users = Object.values(this.props.users)
+    
+
+     
+
+        
 
         return(
 
@@ -12,18 +42,21 @@ class Login extends Component{
 <div className="login">
     <h1>Welcome to "Would you Rather..?"</h1>
     <h2>Enjoyed by deep thinkers everywhere!</h2>
-    <div className="login_form">
-     <p>Sign In:</p>
-     <select value="select" disabled>Select</select>
-     <select>
-     {this.props.users.map((user)=>(
-             <option value={this.props.users.name}>
-                 {this.props.users.name}
+   
+     
+     <form className="login_form" onSubmit={this.handleSubmit}>
+     
+      
+     <label>Select User: </label>
+     <select onChange={this.handleChange}>
+         {users.map((user)=>(
+             <option key ={user.name} value={user.name}>
+                 {user.name}
              </option>
          ))}
-     </select>
-      
-    </div>
+     </select><br></br><br></br>
+      <button type="submit">Submit</button>
+    </form>
 
 
 
@@ -31,6 +64,16 @@ class Login extends Component{
 </div>
         )
     }
+
 }
 
-export default Login
+function mapStateToProps({users}){
+return{
+    users: Object.keys(users).map(id =>  {
+        return {id: users[id]['id'], name : users[id]['name']}
+    })
+  }
+}
+
+
+export default connect(mapStateToProps)(Login)
