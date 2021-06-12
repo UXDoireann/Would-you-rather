@@ -10,7 +10,8 @@ class Dashboard extends Component{
 
         return(
             <div>
-               <h3 className ='center'>Questions</h3>
+           <div className='questions'>
+               <h3 className ='center'>Answered Questions</h3>
                <ul className ="question-list">
                    {this.props.questionIds.map((id)=>(
                        <li key ={id} >
@@ -20,6 +21,18 @@ class Dashboard extends Component{
                    ))}
                </ul>
             </div>
+            <div className='questions'>
+               <h3 className ='center'>Unanswered Questions</h3>
+               <ul className ="question-list">
+                   {this.props.questionIds.map((id)=>(
+                       <li key ={id} >
+                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
+                        author={this.props.users[this.props.questions[id].author].name}/></div>
+                       </li>
+                   ))}
+               </ul>
+            </div>
+        </div>
         )
     }
 }
