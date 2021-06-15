@@ -6,6 +6,8 @@ import Question from './Question'
 class Dashboard extends Component{
     render(){
 
+
+       
      // console.log(this.props.questions, this.props.users)
 
         return(
@@ -37,15 +39,20 @@ class Dashboard extends Component{
     }
 }
 
-function mapStateToProps({questions, users}){
+function mapStateToProps({questions, users, loggedInUser}){
 
 
  const questionIds = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
+
+ const answered=Object.keys(users[loggedInUser].answers)
+ const unanswered = Object.values(questions).filter((question)=>!answered.includes(question.id))
     
  return{
         users,
         questions,
-        questionIds    
+        questionIds,
+        answered,
+        unanswered   
     }
 }
 

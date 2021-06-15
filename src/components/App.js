@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import '../App.css';
 import{connect} from 'react-redux'
 import{handleInitialData} from '../actions/shared'
-import Dashboard from './Dashboard'
 import Login from './Login'
 
 
@@ -22,8 +21,8 @@ class App extends Component{
 
   return (
     <div>
-       <Login users={this.props.users}/>
-      <Dashboard/>
+       <Login/>
+     
   </div>
   );
 }

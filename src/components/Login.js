@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {setLoggedInUser} from '../actions/loggedInUser' 
+import {Dashboard} from './Dashboard'
 
 class Login extends Component{
 
@@ -57,6 +58,8 @@ class Login extends Component{
      </select><br></br><br></br>
       <button type="submit">Submit</button>
     </form>
+
+    <Dashboard/>
 
 
 
