@@ -4,18 +4,33 @@ import Question from './Question'
 
 
 class Dashboard extends Component{
+
+
+
+    
     render(){
 
 
        
-     // console.log(this.props.questions, this.props.users)
+     console.log(this.props.questions, this.props.users, this.props.loggedInUser)
+
+      
+             const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
+             console.log(ansQ)
+    
+             
+         
+
+    
+    const unansQ = Object.values(this.props.questions).filter((question)=>!ansQ.includes(question.id))
+    console.log(unansQ)
 
         return(
             <div>
            <div className='questions'>
                <h3 className ='center'>Answered Questions</h3>
                <ul className ="question-list">
-                   {this.props.questionIds.map((id)=>(
+                   {ansQ.map((id)=>(
                        <li key ={id} >
                            <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
                         author={this.props.users[this.props.questions[id].author].name}/></div>
@@ -26,7 +41,7 @@ class Dashboard extends Component{
             <div className='questions'>
                <h3 className ='center'>Unanswered Questions</h3>
                <ul className ="question-list">
-                   {this.props.questionIds.map((id)=>(
+                   {unansQ.map((id)=>(
                        <li key ={id} >
                            <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
                         author={this.props.users[this.props.questions[id].author].name}/></div>
@@ -39,20 +54,18 @@ class Dashboard extends Component{
     }
 }
 
-function mapStateToProps({questions, users, loggedInUser}){
+function mapStateToProps({questions, users}){
 
 
  const questionIds = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
 
- const answered=Object.keys(users[loggedInUser].answers)
- const unanswered = Object.values(questions).filter((question)=>!answered.includes(question.id))
+ 
     
  return{
         users,
         questions,
         questionIds,
-        answered,
-        unanswered   
+        
     }
 }
 

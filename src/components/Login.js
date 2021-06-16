@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {setLoggedInUser} from '../actions/loggedInUser' 
-import {Dashboard} from './Dashboard'
+import Dashboard from './Dashboard'
 
 class Login extends Component{
 
     state={
-        loggedInUser:''
+        loggedInUser:'simonedebeauvoir'
     }
 
     
@@ -31,6 +31,8 @@ class Login extends Component{
 
      
         const users = Object.values(this.props.users)
+
+        
     
 
      
@@ -51,7 +53,7 @@ class Login extends Component{
      <label>Select User: </label>
      <select onChange={this.handleChange}>
          {users.map((user)=>(
-             <option key ={user.name} value={user.name}>
+             <option key ={user.id} value={user.id}>
                  {user.name}
              </option>
          ))}
@@ -59,7 +61,7 @@ class Login extends Component{
       <button type="submit">Submit</button>
     </form>
 
-    <Dashboard/>
+    <Dashboard loggedInUser={this.state.loggedInUser} />
 
 
 
@@ -70,11 +72,17 @@ class Login extends Component{
 
 }
 
-function mapStateToProps({users}){
+function mapStateToProps({users, questions, loggedInUser}){
+
+   
 return{
     users: Object.keys(users).map(id =>  {
-        return {id: users[id]['id'], name : users[id]['name']}
-    })
+        return {id: users[id]['id'], name : users[id]['name']}}),
+     
+
+        
+    
+    
   }
 }
 
