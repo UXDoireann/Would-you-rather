@@ -1,13 +1,11 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {setLoggedInUser} from '../actions/loggedInUser' 
-import Dashboard from './Dashboard'
+
 
 class Login extends Component{
 
-    state={
-        loggedInUser:'simonedebeauvoir'
-    }
+   
 
     
 
@@ -61,7 +59,7 @@ class Login extends Component{
       <button type="submit">Submit</button>
     </form>
 
-    <Dashboard loggedInUser={this.state.loggedInUser} />
+   
 
 
 
