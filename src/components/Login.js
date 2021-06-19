@@ -5,7 +5,9 @@ import {setLoggedInUser} from '../actions/loggedInUser'
 
 class Login extends Component{
 
-   
+   state={
+       loggedInUser:''
+   }
 
     
 
@@ -56,7 +58,7 @@ class Login extends Component{
              </option>
          ))}
      </select><br></br><br></br>
-      <button type="submit">Submit</button>
+     
     </form>
 
    
@@ -70,12 +72,13 @@ class Login extends Component{
 
 }
 
-function mapStateToProps({users, questions, loggedInUser}){
+function mapStateToProps({users, questions}, {loggedInUser}){
 
    
 return{
     users: Object.keys(users).map(id =>  {
         return {id: users[id]['id'], name : users[id]['name']}}),
+        loggedInUser
      
 
         

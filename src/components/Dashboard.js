@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Question from './Question'
 
 
+
 class Dashboard extends Component{
 
 
@@ -54,7 +55,7 @@ class Dashboard extends Component{
     }
 }
 
-function mapStateToProps({questions, users}, {loggedInUser}){
+function mapStateToProps({questions, users, loggedInUser}){
 
 
  //const questionIds = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
