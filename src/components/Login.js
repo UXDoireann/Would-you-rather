@@ -15,6 +15,8 @@ class Login extends Component{
 
     handleChange=(e)=>{
         const loggedInUser=e.target.value
+        const {dispatch}=this.props
+        dispatch(setLoggedInUser(loggedInUser))
         this.setState(()=>({loggedInUser:loggedInUser,
         toHome:true}))
         console.log(loggedInUser)
@@ -50,8 +52,9 @@ class Login extends Component{
 
 
 <div className="login">
-    <h1>Welcome to "Would you Rather..?"</h1>
-    <h2>Enjoyed by deep thinkers everywhere!</h2>
+    <h3>Welcome to:</h3>
+    <h1>"Would you Rather..?"</h1>
+    <p>Enjoyed by deep thinkers everywhere!</p>
    
      
      <form className="login_form" onSubmit={this.handleSubmit}>

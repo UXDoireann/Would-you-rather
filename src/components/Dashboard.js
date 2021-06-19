@@ -12,6 +12,7 @@ class Dashboard extends Component{
     render(){
 
 
+        
        
      console.log(this.props.questions, this.props.users, this.props.loggedInUser)
 
@@ -23,8 +24,10 @@ class Dashboard extends Component{
          
 
     
-    const unansQ = Object.values(this.props.questions).filter((question)=>!ansQ.includes(question.id))
+    const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question.id))
     console.log(unansQ)
+
+    
 
         return(
             <div>
@@ -58,7 +61,7 @@ class Dashboard extends Component{
 function mapStateToProps({questions, users, loggedInUser}){
 
 
- //const questionIds = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
+ // questions = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
 
  
     

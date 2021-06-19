@@ -1,5 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Tangerine:wght@700&display=swap');
 
+.nav{
+  color:white;
+  background-color: salmon;
+  display:flex;
+  flex-direction:row;
+
+
+}
 
 
 @media(max-width:599px) {
@@ -28,19 +37,46 @@
 
   .login, .question_card{
     width:285px;
-    height:300px;
+  
     border-radius: 8px;
     margin-left:5px;
     margin-bottom:20px;
-    margin-top:20px;
+    margin-top:10px;
     padding-bottom:10px;
     padding-top:10px;
     box-shadow:5px 10px 5px 10px rgba(228, 191, 191, 0.4) ;
+    background-color: rgb(252, 248, 248);
   }
 
-  h1, h2{
+  h1,  h3{
+    font-family: 'Tangerine', cursive;
     margin-left:2px;
   }
+
+  h1{
+    font-size:50px;
+    margin-left:5px;
+    color:rgb(70, 45, 70);
+  }
+
+  h3{
+    margin-left:10px;
+    font-size:45px;
+    color:rgb(37, 15, 37);
+  
+  }
+
+  p{
+    font-size:30px;
+    margin-left:15px;
+    font-family: 'Tangerine', cursive;
+    color:rgb(70, 45, 70);
+  }
+
+   .login{
+     margin-left:8vw;
+     width:85vw;
+   }
 
   .login_form{
     margin-left:15vw;
@@ -121,6 +157,7 @@
 
   h1, h2{
     margin-left:8vw;
+    font-family: 'Tangerine', cursive;
   }
 
   .login_form{
@@ -200,6 +237,7 @@
 
   h1, h2{
     margin-left:8vw;
+    font-family: 'Tangerine', cursive;
   }
 
   .login_form{
