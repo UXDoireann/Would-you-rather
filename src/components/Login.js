@@ -1,19 +1,22 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {setLoggedInUser} from '../actions/loggedInUser' 
+import {Redirect} from 'react-router-dom'
 
 
 class Login extends Component{
 
    state={
-       loggedInUser:''
+       loggedInUser:'',
+       toHome:false,
    }
 
     
 
     handleChange=(e)=>{
         const loggedInUser=e.target.value
-        this.setState(()=>({loggedInUser:loggedInUser}))
+        this.setState(()=>({loggedInUser:loggedInUser,
+        toHome:true}))
         console.log(loggedInUser)
        }
 
@@ -31,6 +34,10 @@ class Login extends Component{
 
      
         const users = Object.values(this.props.users)
+
+        if(this.state.toHome===true){
+            return<Redirect to ='/home'/>
+        }
 
         
     
