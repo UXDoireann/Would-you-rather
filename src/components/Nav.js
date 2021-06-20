@@ -3,14 +3,25 @@ import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
 import { connect } from 'react-redux'
 import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import {logOutUser} from '../actions/loggedInUser'
+
 
 
 class Navig extends Component{
 
+     
+
     render(){
     
-
+const handleLogOut=(e)=>{
+    e.preventDefault();
+   
+    this.setState(()=>({loggedInUser:null
+        }))
+        this.props.dispatch(logOutUser)
+        console.log("logged out")
+   
+}
 
 
 return(
@@ -30,9 +41,9 @@ return(
                 <Navbar.Text>
                  {this.props.loggedInUser!==null?(
                      <div>
-                         <div>Hello {this.props.loggedInUser}</div>
+                         <div>Hello {this.props.name}</div>
                          <img className='avatar' alt={this.props.name} src={this.props.avatar}/>
-                         <button >Log out</button>
+                         <button onClick={handleLogOut}>Log out</button>
                      </div>
                  ):null}
                 </Navbar.Text>

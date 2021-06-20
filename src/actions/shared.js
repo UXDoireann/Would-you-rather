@@ -2,6 +2,7 @@ import{getInitialData} from '../utils/helper'
 import{receiveUsers} from './users'
 import {receiveQuestions} from './questions'
 import {setLoggedInUser} from './loggedInUser'
+import {logOutUser} from './loggedInUser'
 import {showLoading, hideLoading} from 'react-redux-loading'
 
 let LOGGED_ID = null
@@ -14,6 +15,7 @@ export function handleInitialData(){
             dispatch(receiveUsers(users))
             dispatch(receiveQuestions(questions))
             dispatch(setLoggedInUser(LOGGED_ID))
+            dispatch(logOutUser(null))
             dispatch(hideLoading())
             
         })
