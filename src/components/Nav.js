@@ -8,17 +8,18 @@ export default function Nav(){
 
 return(
     <nav className = 'nav'>
-    <ul>
-        <li>
-            <NavLink to ="/" exact activeClassName="active">
-                Login
-            </NavLink>
-            </li>
-            <li>
- <NavLink to = "/home" exact activeClassName='active'>
+    <ul className = 'nav_list'>
+    <li>
+ <NavLink to = "/home" exact activeClassName="active" >
         Home
     </NavLink>
     </li>
+        <li>
+            <NavLink to ="/" exact activeClassName="active" >
+                Login
+            </NavLink>
+            </li>
+          
     
 
     </ul>

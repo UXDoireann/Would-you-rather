@@ -1,6 +1,8 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
 import Question from './Question'
+import { Tabs, Tab, TabList, TabPanel} from 'react-tabs';
+import 'react-tabs/style/react-tabs.css'
 
 
 
@@ -30,20 +32,13 @@ class Dashboard extends Component{
     
 
         return(
-            <div>
-           <div className='questions'>
-               <h3 className ='center'>Answered Questions</h3>
-               <ul className ="question-list">
-                   {ansQ.map((id)=>(
-                       <li key ={id} >
-                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
-                        author={this.props.users[this.props.questions[id].author].name}/></div>
-                       </li>
-                   ))}
-               </ul>
-            </div>
-            <div className='questions'>
-               <h3 className ='center'>Unanswered Questions</h3>
+            <Tabs>
+                <TabList className="tablist">
+                     <Tab className="tab">Unanswered Questions</Tab>
+                    <Tab className="tab">Answered Questions</Tab>
+                    </TabList>
+
+                <TabPanel className='questions'>
                <ul className ="question-list">
                    {unansQ.map((id)=>(
                        <li key ={id} >
@@ -52,8 +47,20 @@ class Dashboard extends Component{
                        </li>
                    ))}
                </ul>
-            </div>
-        </div>
+            </TabPanel>
+
+           <TabPanel className='questions'>
+    <ul className ="question-list">
+                   {ansQ.map((id)=>(
+                       <li key ={id} >
+                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
+                        author={this.props.users[this.props.questions[id].author].name}/></div>
+                       </li>
+                   ))}
+               </ul>
+            </TabPanel>
+          
+        </Tabs>
         )
     }
 }
