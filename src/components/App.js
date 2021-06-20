@@ -7,7 +7,7 @@ import{handleInitialData} from '../actions/shared'
 import Login from './Login'
 import Dashboard from './Dashboard';
 import LoadingBar from 'react-redux-loading'
-import Nav from './Nav'
+import Navig from './Nav'
 
 
 
@@ -31,7 +31,7 @@ class App extends Component{
     <Fragment>
       <LoadingBar/>
      <div className = 'container'>
-       <Nav/>
+       <Navig/>
        {this.props.loading===true
        ?null
       :<div>

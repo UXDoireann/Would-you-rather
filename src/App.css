@@ -1,8 +1,61 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Tangerine:wght@700&display=swap');
+
+.nav{
+  background-color:#f04242; 
+  padding-top:2vh;
+  padding-bottom:2vh;
+}
+
+.nav_list{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+ 
+
+}
 
 
 
-@media(max-width:599px) {
+.active{
+  color:rgb(241, 238, 241);
+  margin-left: 10px;
+  text-decoration: none;
+ 
+  
+}
+
+.tab{
+  font-family: 'Tangerine';
+ 
+}
+  
+
+
+.tablist{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+  background-color: rgb(252, 248, 248);
+}
+
+
+
+
+
+
+@media (max-width:1000px) {
+
+  .tab{
+    font-size:25px;
+    padding-left:7px;
+    padding-right:7px;
+    padding-top:7px;
+  }
+
+  .tablist{
+    padding-top:10px;
+  }
 
   .user{
     display:flex;
@@ -28,19 +81,46 @@
 
   .login, .question_card{
     width:285px;
-    height:300px;
+  
     border-radius: 8px;
     margin-left:5px;
     margin-bottom:20px;
-    margin-top:20px;
+    margin-top:10px;
     padding-bottom:10px;
     padding-top:10px;
     box-shadow:5px 10px 5px 10px rgba(228, 191, 191, 0.4) ;
+    background-color: rgb(252, 248, 248);
   }
 
-  h1, h2{
+  h1,  h3{
+    font-family: 'Tangerine', cursive;
     margin-left:2px;
   }
+
+  h1{
+    font-size:50px;
+    margin-left:5px;
+    color:rgb(70, 45, 70);
+  }
+
+  h3{
+    margin-left:10px;
+    font-size:45px;
+    color:rgb(37, 15, 37);
+  
+  }
+
+  p{
+    font-size:30px;
+    margin-left:15px;
+    font-family: 'Tangerine', cursive;
+    color:rgb(70, 45, 70);
+  }
+
+   .login{
+     margin-left:8vw;
+     width:85vw;
+   }
 
   .login_form{
     margin-left:15vw;
@@ -58,9 +138,6 @@
   }
 
 
-.App-link {
-  color: #61dafb;
-}
 
 .actual_question{
   display:flex;
@@ -84,7 +161,7 @@
 
 }
 
-@media(min-width:600px)and(max-width:1199px){
+/*@media(min-width:600px)and(max-width:1199px){
 
   .user{
     display:flex;
@@ -121,6 +198,7 @@
 
   h1, h2{
     margin-left:8vw;
+    font-family: 'Tangerine', cursive;
   }
 
   .login_form{
@@ -161,9 +239,30 @@
   margin-bottom:5vh;
 
 }
-}
+}*/
 
-@media(min-width:1200px){
+@media(min-width:1001px){
+
+  h1, h2, h3{
+    
+    font-family: 'Tangerine', cursive;
+  }
+
+  h1{
+    font-size:70px;
+  }
+
+  h2{
+    font-size:40px;
+  }
+
+  h3{
+    font-size:40px;
+  }
+  
+  p{
+    font-size:20px;
+  }
 
   .user{
     display:flex;
@@ -188,7 +287,7 @@
 
   .login, .question_card{
     width:50vw;
-    height:56vh;
+    height:auto;
     border-radius: 8px;
     margin-left:20vw;
     margin-bottom:10vh;
@@ -198,9 +297,18 @@
     box-shadow:5px 10px 5px 10px rgba(228, 191, 191, 0.4) ;
   }
 
-  h1, h2{
-    margin-left:8vw;
-  }
+ .tab{
+   font-size:45px;
+   padding-top:10px;
+   padding-left:15px;
+   padding-right:15px;
+   border-top-left-radius: 1px solid  rgba(228, 191, 191, 0.4);
+ }
+
+ .tablist{
+   padding-top:20px;
+   margin-top:0%;
+ }
 
   .login_form{
     margin-left:15vw;

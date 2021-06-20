@@ -1,24 +1,54 @@
 
-import React from 'react'
+import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
+import { connect } from 'react-redux'
+import Navbar from "react-bootstrap/Navbar";
+import {logOutUser} from '../actions/loggedInUser'
 
-export default function Nav(){
 
+
+class Navig extends Component{
+
+     
+
+    render(){
+    
+const handleLogOut=(e)=>{
+    e.preventDefault();
+   
+    this.setState(()=>({loggedInUser:null
+        }))
+        this.props.dispatch(logOutUser)
+        console.log("logged out")
+   
+}
 
 
 return(
     <nav className = 'nav'>
-    <ul>
-        <li>
-            <NavLink to ="/" exact activeClassName="active">
-                Login
-            </NavLink>
-            </li>
-            <li>
- <NavLink to = "/home" exact activeClassName='active'>
+    <ul className = 'nav_list'>
+    <li>
+ <NavLink to = "/home" exact activeClassName="active" >
         Home
     </NavLink>
     </li>
+        <li>
+            <NavLink to ="/" exact activeClassName="active" >
+               Log in
+             </NavLink>
+            </li>
+            <li>
+                <Navbar.Text>
+                 {this.props.loggedInUser!==null?(
+                     <div>
+                         <div>Hello {this.props.name}</div>
+                         <img className='avatar' alt={this.props.name} src={this.props.avatar}/>
+                         <button onClick={handleLogOut}>Log out</button>
+                     </div>
+                 ):null}
+                </Navbar.Text>
+            </li>
+          
     
 
     </ul>
@@ -28,8 +58,19 @@ return(
 
 
 )
+                 }
+                }
 
     
+
+
+function mapStateToProps({loggedInUser, users}){
+    
+    return{
+        loggedInUser,
+        avatar: loggedInUser? users[loggedInUser].avatarURL:null,
+        name: loggedInUser? users[loggedInUser].name:null
+    }
 }
 
-
+export default connect(mapStateToProps)(Navig)

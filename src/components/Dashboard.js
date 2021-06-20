@@ -1,6 +1,8 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
 import Question from './Question'
+import { Tabs, Tab, TabList, TabPanel} from 'react-tabs';
+import 'react-tabs/style/react-tabs.css'
 
 
 
@@ -12,6 +14,7 @@ class Dashboard extends Component{
     render(){
 
 
+        
        
      console.log(this.props.questions, this.props.users, this.props.loggedInUser)
 
@@ -23,24 +26,19 @@ class Dashboard extends Component{
          
 
     
-    const unansQ = Object.values(this.props.questions).filter((question)=>!ansQ.includes(question.id))
+    const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question.id))
     console.log(unansQ)
 
+    
+
         return(
-            <div>
-           <div className='questions'>
-               <h3 className ='center'>Answered Questions</h3>
-               <ul className ="question-list">
-                   {ansQ.map((id)=>(
-                       <li key ={id} >
-                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
-                        author={this.props.users[this.props.questions[id].author].name}/></div>
-                       </li>
-                   ))}
-               </ul>
-            </div>
-            <div className='questions'>
-               <h3 className ='center'>Unanswered Questions</h3>
+            <Tabs>
+                <TabList className="tablist">
+                     <Tab className="tab">Unanswered Questions</Tab>
+                    <Tab className="tab">Answered Questions</Tab>
+                    </TabList>
+
+                <TabPanel className='questions'>
                <ul className ="question-list">
                    {unansQ.map((id)=>(
                        <li key ={id} >
@@ -49,8 +47,20 @@ class Dashboard extends Component{
                        </li>
                    ))}
                </ul>
-            </div>
-        </div>
+            </TabPanel>
+
+           <TabPanel className='questions'>
+    <ul className ="question-list">
+                   {ansQ.map((id)=>(
+                       <li key ={id} >
+                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
+                        author={this.props.users[this.props.questions[id].author].name}/></div>
+                       </li>
+                   ))}
+               </ul>
+            </TabPanel>
+          
+        </Tabs>
         )
     }
 }
@@ -58,7 +68,7 @@ class Dashboard extends Component{
 function mapStateToProps({questions, users, loggedInUser}){
 
 
- //const questionIds = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
+ // questions = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
 
  
     

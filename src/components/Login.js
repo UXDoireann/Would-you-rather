@@ -15,6 +15,8 @@ class Login extends Component{
 
     handleChange=(e)=>{
         const loggedInUser=e.target.value
+        const {dispatch}=this.props
+        dispatch(setLoggedInUser(loggedInUser))
         this.setState(()=>({loggedInUser:loggedInUser,
         toHome:true}))
         console.log(loggedInUser)
@@ -49,22 +51,25 @@ class Login extends Component{
         return(
 
 
-<div className="login">
-    <h1>Welcome to "Would you Rather..?"</h1>
-    <h2>Enjoyed by deep thinkers everywhere!</h2>
+<div className="login" onSubmit={this.handleSubmit}>
+    <h3>Welcome to:</h3>
+    <h1>"Would you Rather..?"</h1>
+    <p>Enjoyed by deep thinkers everywhere!</p>
    
      
-     <form className="login_form" onSubmit={this.handleSubmit}>
+     <form className="login_form" >
      
       
-     <label>Select User: </label>
-     <select onChange={this.handleChange}>
+     <label>First of all, who are you?</label>
+     <select onChange={this.handleChange}  >
          {users.map((user)=>(
              <option key ={user.id} value={user.id}>
                  {user.name}
              </option>
          ))}
-     </select><br></br><br></br>
+     </select>
+     
+     <br></br><br></br>
      
     </form>
 
@@ -79,7 +84,7 @@ class Login extends Component{
 
 }
 
-function mapStateToProps({users, questions}, {loggedInUser}){
+function mapStateToProps({users, questions, loggedInUser}){
 
    
 return{

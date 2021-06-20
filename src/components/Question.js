@@ -21,7 +21,7 @@ class Question extends Component{
            
                 <img className='avatar' alt={this.props.author} src={this.props.userPic}/>
           
-               <h3>{this.props.author} asks if you'd rather...</h3> 
+               <h3 className="asks">{this.props.author} asks if you'd rather...</h3> 
            </div>
 
             <div className='actual_question'>
