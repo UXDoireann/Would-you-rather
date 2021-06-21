@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Question from './Question'
 import { Tabs, Tab, TabList, TabPanel} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'
+import {Link, withRouter} from 'react-router-dom'
 
 
 
@@ -42,8 +43,12 @@ class Dashboard extends Component{
                <ul className ="question-list">
                    {unansQ.map((id)=>(
                        <li key ={id} >
-                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
-                        author={this.props.users[this.props.questions[id].author].name}/></div>
+                           <div className="question_card"><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
+                        author={this.props.users[this.props.questions[id].author].name}/>
+                         <Link  to={`/questions/${id}`}>
+             <button className="view_poll">View Question</button>
+             </Link>
+                        </div>
                        </li>
                    ))}
                </ul>
@@ -53,8 +58,11 @@ class Dashboard extends Component{
     <ul className ="question-list">
                    {ansQ.map((id)=>(
                        <li key ={id} >
-                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
-                        author={this.props.users[this.props.questions[id].author].name}/></div>
+                           <div className="question_card"><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
+                        author={this.props.users[this.props.questions[id].author].name}/>
+                        <Link  to={`/poll/${id}`}>
+             <button className="view_poll">View Poll</button>
+             </Link></div>
                        </li>
                    ))}
                </ul>

@@ -8,6 +8,8 @@ import Login from './Login'
 import Dashboard from './Dashboard';
 import LoadingBar from 'react-redux-loading'
 import Navig from './Nav'
+import UnAnsQ from './UnAnsQ';
+import Poll from './Poll'
 
 
 
@@ -38,6 +40,8 @@ class App extends Component{
         <Route path='/' exact component = {Login}/>
               <Switch>
           <Route path ='/home' component={Dashboard}/>
+          <Route path ='/questions/:id' component={UnAnsQ}/>
+          <Route path ='/poll/:id' component={Poll}/>
           </Switch>
     </div>}
     </div>

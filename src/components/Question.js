@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 
 
 
+
 class Question extends Component{
 
     render(){
@@ -11,11 +12,13 @@ class Question extends Component{
 
         const {question} = this.props
 
-        const { optionOne, optionTwo} = question
+        const { optionOne, optionTwo, id} = question
+
+        
       
      
         return(
-            <div className ='question_card'>
+            <div >
 
             <div className='user'>
            
@@ -29,8 +32,7 @@ class Question extends Component{
              <p>or</p>
              <p>{optionTwo.text}?</p>
             </div>
-            
-             <button className="view_poll">View Poll</button>
+           
 </div>
         )
         }

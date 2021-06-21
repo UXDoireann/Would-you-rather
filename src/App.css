@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Tangerine:wght@700&display=swap');
 
 .nav{
-  background-color:#f04242; 
+  background-color:#f7ecec; 
   padding-top:2vh;
   padding-bottom:2vh;
+  border-bottom:1px solid #f1d0d0;
 }
 
 .nav_list{
@@ -18,7 +19,7 @@
 
 
 .active{
-  color:rgb(241, 238, 241);
+  
   margin-left: 10px;
   text-decoration: none;
  
@@ -67,29 +68,77 @@
 
   .avatar{
     width:90px;
-    height:60px;
+    height:90px;
     margin-left:5px;
     margin-right:5px;
-    border-radius:80px;
+    border-radius:90px;
     border:2px solid rgb(175, 127, 127);
     float:left;
+  }
+
+  .pic{
+    width:90px;
+    height:90px;
+    border-radius:90px;
   }
 
   li{
     list-style-type: none;
   }
 
+  .hello{
+    font-family: 'Tangerine';
+    color:#1b0e1f;
+    font-size:20px;
+    padding-bottom:3px;
+  }
+
+  .who{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .logout{
+    margin-top:3px;
+    margin-right:20px;
+    padding-left:0px;
+    background-color:#f7ecec ;
+    color:#1b031f;
+    border-style:none;
+    text-align: center;
+  }
+
   .login, .question_card{
-    width:285px;
+    width:80vw;
+    height:auto;
+    margin-right:3vw;
+    margin-left:1vw;
   
     border-radius: 8px;
-    margin-left:5px;
+  
     margin-bottom:20px;
     margin-top:10px;
     padding-bottom:10px;
     padding-top:10px;
     box-shadow:5px 10px 5px 10px rgba(228, 191, 191, 0.4) ;
     background-color: rgb(252, 248, 248);
+  }
+
+  .poll_card{
+    width:90vw;
+    height:auto;
+    margin-right:3vw;
+    margin-left:3vw;
+  
+    border-radius: 8px;
+  
+    margin-bottom:20px;
+    margin-top:10px;
+    padding-bottom:10px;
+    padding-top:10px;
+    box-shadow:5px 10px 5px 10px rgba(228, 191, 191, 0.4) ;
+    background-color: rgb(252, 248, 248);
+
   }
 
   h1,  h3{
@@ -146,12 +195,12 @@
 }
 
 .view_poll{
-  width:250px;
+  width:60vw;
   border-radius:8px;
   border-style: none;
   background-color: #f04242;
   color:white;
-  margin-left:13px;
+  margin-left:10vw;
   padding-top:2vh;
   padding-bottom:2vh;
   margin-bottom:5vh;
@@ -270,6 +319,36 @@
     align-items: center;
   
     
+  }
+
+  .pic{
+    width:90px;
+    height:90px;
+    border-radius:90px;
+    margin-left:6vw;
+  }
+
+  
+  .hello{
+    font-family: 'Tangerine';
+    color:#1b0e1f;
+    font-size:35px;
+    padding-bottom:3px;
+  }
+
+  .who{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .logout{
+    margin-top:3px;
+   margin-left:0px;
+    padding-left:0px;
+    background-color:#f7ecec ;
+    color:#1b031f;
+    border-style:none;
+    text-align: center;
   }
 
   .avatar{
