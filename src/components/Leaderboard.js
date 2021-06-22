@@ -1,10 +1,15 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
+import {Redirect} from 'react-router-dom'
 
 
 class Leaderboard extends Component{
 
     render(){
+
+        if(this.props.loggedInUser===null){
+            return<Redirect to ='/error'/>
+        }
 
 
         const {users}=this.props
@@ -60,9 +65,10 @@ class Leaderboard extends Component{
     }
 }
 
-function mapStateToProps({users}){
+function mapStateToProps({users, loggedInUser}){
     return{
-        users
+        users,
+        loggedInUser
     }
 }
 

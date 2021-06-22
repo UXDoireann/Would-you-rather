@@ -4,18 +4,21 @@ import Question from './Question'
 import { Tabs, Tab, TabList, TabPanel} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'
 import {Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 
 
 class Dashboard extends Component{
 
-
-
+   
     
     render(){
 
 
-        
+        if(this.props.loggedInUser===null){
+            return<Redirect to ='/error'/>
+        }
+    
        
 
 
