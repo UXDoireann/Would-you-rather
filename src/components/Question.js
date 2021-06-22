@@ -12,7 +12,7 @@ class Question extends Component{
 
         const {question} = this.props
 
-        const { optionOne, optionTwo, id} = question
+        const { optionOne, optionTwo} = question
 
         
       

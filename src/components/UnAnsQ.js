@@ -1,23 +1,23 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
-//import {Link} from 'react-router-dom'
+
 
 class UnAnsQ extends Component{
 
 
     render(){
 
-        const{users, loggedInUser} = this.props
+        const{users} = this.props
        
 
         const{id}=this.props.match.params
 
-        console.log(id)
+       
 
 
        
         const question = this.props.questions[id]
-        console.log(question.author)
+      
 
 
         //const{optionOne, optionTwo}=question
@@ -48,7 +48,7 @@ class UnAnsQ extends Component{
     }
 }
 
-function mapStateToProps({questions, users, loggedInUser}){
+function mapStateToProps({questions, users}){
 
     
     
@@ -57,7 +57,7 @@ function mapStateToProps({questions, users, loggedInUser}){
     return{
         questions,
         users,
-        loggedInUser
+       
        
 
     }

@@ -108,7 +108,7 @@
     text-align: center;
   }
 
-  .login, .question_card{
+  .leader_card, .login, .question_card{
     width:80vw;
     height:auto;
     margin-right:3vw;

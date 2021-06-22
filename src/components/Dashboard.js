@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Question from './Question'
 import { Tabs, Tab, TabList, TabPanel} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'
-import {Link, withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 
@@ -17,18 +17,18 @@ class Dashboard extends Component{
 
         
        
-     console.log(this.props.questions, this.props.users, this.props.loggedInUser)
+
 
       
              const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
-             console.log(ansQ)
+            
     
              
          
 
     
     const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question.id))
-    console.log(unansQ)
+ 
 
     
 

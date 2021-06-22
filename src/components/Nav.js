@@ -32,6 +32,11 @@ return(
         Home
     </NavLink>
     </li>
+    <li>
+        <NavLink to = '/leaderboard' exact activeClassName='active'>
+            Leaderboard
+        </NavLink>
+    </li>
         <li>
             <NavLink to ="/" exact activeClassName="active" >
                Log in

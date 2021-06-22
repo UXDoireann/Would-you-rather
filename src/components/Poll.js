@@ -28,7 +28,7 @@ class Poll extends Component{
         const optionOne = question.optionOne
         const optionTwo = question.optionTwo
         const totalVotes = optionOne.votes.length + optionTwo.votes.length
-        console.log(totalVotes)
+
 
         const yourAnswer = question[answer].text
 

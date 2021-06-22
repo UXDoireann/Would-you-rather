@@ -10,6 +10,7 @@ import LoadingBar from 'react-redux-loading'
 import Navig from './Nav'
 import UnAnsQ from './UnAnsQ';
 import Poll from './Poll'
+import Leaderboard from './Leaderboard';
 
 
 
@@ -42,6 +43,7 @@ class App extends Component{
           <Route path ='/home' component={Dashboard}/>
           <Route path ='/questions/:id' component={UnAnsQ}/>
           <Route path ='/poll/:id' component={Poll}/>
+          <Route path ='/leaderboard' component={Leaderboard}/>
           </Switch>
     </div>}
     </div>
