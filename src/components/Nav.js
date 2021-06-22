@@ -32,6 +32,11 @@ return(
         Home
     </NavLink>
     </li>
+    <li>
+        <NavLink to = '/leaderboard' exact activeClassName='active'>
+            Leaderboard
+        </NavLink>
+    </li>
         <li>
             <NavLink to ="/" exact activeClassName="active" >
                Log in
@@ -40,10 +45,10 @@ return(
             <li>
                 <Navbar.Text>
                  {this.props.loggedInUser!==null?(
-                     <div>
-                         <div>Hello {this.props.name}</div>
-                         <img className='avatar' alt={this.props.name} src={this.props.avatar}/>
-                         <button onClick={handleLogOut}>Log out</button>
+                     <div className ="who">
+                         <div className ="hello">Hello {this.props.name}</div>
+                         <img className='pic' alt={this.props.name} src={this.props.avatar}/>
+                         <button className="logout" onClick={handleLogOut}>Log out</button>
                      </div>
                  ):null}
                 </Navbar.Text>

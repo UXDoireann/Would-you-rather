@@ -1,9 +1,10 @@
-import{getInitialData} from '../utils/helper'
-import{receiveUsers} from './users'
-import {receiveQuestions} from './questions'
+import{getInitialData, saveQuestionAnswer} from '../utils/helper'
+import{receiveUsers,  saveUserAnswer} from './users'
+import {receiveQuestions, saveAnswer} from './questions'
 import {setLoggedInUser} from './loggedInUser'
 import {logOutUser} from './loggedInUser'
 import {showLoading, hideLoading} from 'react-redux-loading'
+
 
 let LOGGED_ID = null
 
@@ -21,3 +22,16 @@ export function handleInitialData(){
         })
     }
 }
+
+export function handleQuestionAnswer(){
+    return(dispatch)=>{
+       dispatch(showLoading())
+       return saveQuestionAnswer()
+        .then(({questionId,loggedInUser, answer, userId })=>{
+            dispatch(saveAnswer(questionId, loggedInUser, answer))
+            dispatch(saveUserAnswer(userId, answer))
+        })
+    }
+
+}
+

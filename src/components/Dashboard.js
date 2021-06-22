@@ -3,31 +3,35 @@ import {connect} from 'react-redux'
 import Question from './Question'
 import { Tabs, Tab, TabList, TabPanel} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'
+import {Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 
 
 class Dashboard extends Component{
 
-
-
+   
     
     render(){
 
 
-        
+        if(this.props.loggedInUser===null){
+            return<Redirect to ='/error'/>
+        }
+    
        
-     console.log(this.props.questions, this.props.users, this.props.loggedInUser)
+
 
       
              const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
-             console.log(ansQ)
+            
     
              
          
 
     
     const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question.id))
-    console.log(unansQ)
+ 
 
     
 
@@ -42,8 +46,12 @@ class Dashboard extends Component{
                <ul className ="question-list">
                    {unansQ.map((id)=>(
                        <li key ={id} >
-                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
-                        author={this.props.users[this.props.questions[id].author].name}/></div>
+                           <div className="question_card"><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
+                        author={this.props.users[this.props.questions[id].author].name}/>
+                         <Link  to={`/questions/${id}`}>
+             <button className="view_poll">View Question</button>
+             </Link>
+                        </div>
                        </li>
                    ))}
                </ul>
@@ -53,8 +61,11 @@ class Dashboard extends Component{
     <ul className ="question-list">
                    {ansQ.map((id)=>(
                        <li key ={id} >
-                           <div><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
-                        author={this.props.users[this.props.questions[id].author].name}/></div>
+                           <div className="question_card"><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
+                        author={this.props.users[this.props.questions[id].author].name}/>
+                        <Link  to={`/poll/${id}`}>
+             <button className="view_poll">View Poll</button>
+             </Link></div>
                        </li>
                    ))}
                </ul>
