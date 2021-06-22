@@ -1,8 +1,24 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
+import {handleQuestionAnswer} from '../actions/shared'
 
 
 class UnAnsQ extends Component{
+
+    state={
+        option:'',
+        //toPoll:false
+    }
+
+    handleChange=(e)=>{
+        const option=e.target.value
+        /*const {dispatch}=this.props
+        dispatch(handleQuestionAnswer(option))
+        this.setState(()=>({option:option}))*/
+        console.log(option)
+       }
+
+  
 
 
     render(){
@@ -11,16 +27,14 @@ class UnAnsQ extends Component{
        
 
         const{id}=this.props.match.params
-
-       
-
-
-       
         const question = this.props.questions[id]
+
+
+
       
 
 
-        //const{optionOne, optionTwo}=question
+      
 
         
 
@@ -37,10 +51,16 @@ class UnAnsQ extends Component{
            </div>
 
             <div className='actual_question'>
-             <p>{question.optionOne.text}</p>
+                <form>
+             <label for="one">{question.optionOne.text}</label>
+             <input type="radio"  name ="vote"  id="one" value={question.optionOne}/>
              <p>or</p>
-             <p>{question.optionTwo.text}?</p>
+             <label for="two">{question.optionTwo.text}?</label>
+             <input type="radio" name="vote" id="two" value={question.optionTwo}/>
+             <button type="submit" onSubmit={this.handleChange}>Save Answer</button>
+             </form>
             </div>
+           
             </div>
 
 
