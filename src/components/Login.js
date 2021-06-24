@@ -74,7 +74,7 @@ class Login extends Component{
              </option>
          ))}
      </select>
-     <button onClick={this.handleSubmit}>Login</button>
+     <button className='login_button' onClick={this.handleSubmit}>Login</button>
      <br></br><br></br>
      
     </form>
