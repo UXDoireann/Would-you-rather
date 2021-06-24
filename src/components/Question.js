@@ -28,9 +28,9 @@ class Question extends Component{
            </div>
 
             <div className='actual_question'>
-             <p>{optionOne.text}</p>
-             <p>or</p>
-             <p>{optionTwo.text}?</p>
+             <p className="q">{optionOne.text}</p>
+             <p className="q">or</p>
+             <p className="q">{optionTwo.text}?</p>
             </div>
            
 </div>

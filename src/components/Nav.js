@@ -28,17 +28,17 @@ return(
     <nav className = 'nav'>
     <ul className = 'nav_list'>
     <li>
- <NavLink to = "/home" exact activeClassName="active" >
+ <NavLink to = "/home" exact className='link' >
         Home
     </NavLink>
     </li>
     <li>
-        <NavLink to = '/leaderboard' exact activeClassName='active'>
+        <NavLink to = '/leaderboard' exact className='link'>
             Leaderboard
         </NavLink>
     </li>
         <li>
-            <NavLink to ="/" exact activeClassName="active" >
+            <NavLink to ="/" exact className='link' >
                Log in
              </NavLink>
             </li>
