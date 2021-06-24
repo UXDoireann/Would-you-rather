@@ -18,7 +18,7 @@ const handleLogOut=(e)=>{
    
     this.setState(()=>({loggedInUser:null
         }))
-        this.props.dispatch(logOutUser)
+        this.props.dispatch(logOutUser())
         console.log("logged out")
    
 }
