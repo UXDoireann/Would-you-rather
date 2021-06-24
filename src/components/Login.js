@@ -16,17 +16,21 @@ class Login extends Component{
     handleChange=(e)=>{
         const loggedInUser=e.target.value
         const {dispatch}=this.props
-        dispatch(setLoggedInUser(loggedInUser))
         this.setState(()=>({loggedInUser:loggedInUser,
-        toHome:true}))
+        toHome:false}))
         console.log(loggedInUser)
        }
 
    handleSubmit=(e)=>{
        e.preventDefault()
-       const{loggedInUser}=this.state
+       let {loggedInUser}=this.state
        const{dispatch}=this.props
+
+       if(!loggedInUser){
+           loggedInUser=this.props?.users[0]?.id
+       }
        dispatch(setLoggedInUser(loggedInUser))
+       this.setState(()=>({loggedInUser:loggedInUser, toHome:true}))
    }
 
   
@@ -51,7 +55,7 @@ class Login extends Component{
         return(
 
 
-<div className="loggy" onSubmit={this.handleSubmit}>
+<div className="loggy" >
     <div className="intro">
     <h3>Welcome to:</h3>
     <h1>"Would you Rather..?"</h1>
@@ -63,14 +67,14 @@ class Login extends Component{
      
       
      <p className="q">First of all, who are you?</p>
-     <select onChange={this.handleChange}  >
+     <select onChange={this.handleChange} >
          {users.map((user)=>(
              <option key ={user.id} value={user.id}>
                  {user.name}
              </option>
          ))}
      </select>
-     
+     <button onClick={this.handleSubmit}>Login</button>
      <br></br><br></br>
      
     </form>
