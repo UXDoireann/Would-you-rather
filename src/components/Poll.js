@@ -52,11 +52,11 @@ class Poll extends Component{
            </div>
 
             <div className='actual_question'>
-            <p>You said you would rather {yourAnswer} </p>
+            <p className="q">You said you would rather {yourAnswer} </p>
 
-             <p>{question.optionOne.votes.length / totalVotes * 100}% chose option 1 <br></br>({question.optionOne.text}) <br></br> Votes:{question.optionOne.votes.length}</p>
+             <p className="q">{question.optionOne.votes.length / totalVotes * 100}% chose option 1 <br></br>({question.optionOne.text}) <br></br> Votes:{question.optionOne.votes.length}</p>
             
-             <p>{question.optionTwo.votes.length / totalVotes * 100}% chose option 2 <br></br> ({question.optionTwo.text}) <br></br>Votes:{question.optionTwo.votes.length}</p>
+             <p className="q">{question.optionTwo.votes.length / totalVotes * 100}% chose option 2 <br></br> ({question.optionTwo.text}) <br></br>Votes:{question.optionTwo.votes.length}</p>
 
              
             </div>

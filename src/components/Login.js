@@ -51,16 +51,18 @@ class Login extends Component{
         return(
 
 
-<div className="login" onSubmit={this.handleSubmit}>
+<div className="loggy" onSubmit={this.handleSubmit}>
+    <div className="intro">
     <h3>Welcome to:</h3>
     <h1>"Would you Rather..?"</h1>
-    <p>Enjoyed by deep thinkers everywhere!</p>
+    <p className="tagline">Enjoyed by deep thinkers everywhere!</p>
+    </div>
    
      
-     <form className="login_form" >
+     <form className="login" >
      
       
-     <label>First of all, who are you?</label>
+     <p className="q">First of all, who are you?</p>
      <select onChange={this.handleChange}  >
          {users.map((user)=>(
              <option key ={user.id} value={user.id}>
