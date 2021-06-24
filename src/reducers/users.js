@@ -7,14 +7,16 @@ export default function users (state={}, action){
              ...state,
              ...action.users
          }
-         case SAVE_USER_ANSWER:
-              return {
-                ...state,
-                [action.loggedInUser]: {
-                  ...state[action.loggedInUser],
-                  questions: state[action.loggedInUser].questions.concat([action.question.id])
+        /* case SAVE_USER_ANSWER:
+              return  {...users,
+              [authedUser]: {
+                ...users[authedUser],
+                answers: {
+                  ...users[authedUser].answers,
+                  [qid]: answer
                 }
               }
+            }*/
          default:
              return state
  }

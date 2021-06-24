@@ -8,10 +8,11 @@ export function receiveUsers(users){
     }
 }
 
-export function saveUserAnswer(userId, answer){
+export function saveUserAnswer(authedUser, qid, answer){
     return{
         type:SAVE_USER_ANSWER,
-        userId,
+        authedUser,
+        qid,
         answer
     }
 }

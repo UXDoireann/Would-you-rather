@@ -10,11 +10,12 @@ export function receiveQuestions(questions){
     }
 }
 
-export function saveAnswer(loggedInUser, questionId, answer){
+export function saveAnswer(authedUser, qid, answer){
     return{
         type:SAVE_QUESTION_ANSWER,
-        loggedInUser,
-        questionId, answer
+        authedUser,
+        qid,
+         answer
     }
 }
 

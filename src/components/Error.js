@@ -5,7 +5,7 @@ class Error extends Component{
     render(){
 
     return(
-        <div>Please Log In to Continue!</div>
+        <div className="error">Please log in to continue!</div>
     )
 
     }

@@ -10,14 +10,29 @@ class UnAnsQ extends Component{
         //toPoll:false
     }
 
-    handleChange=(e)=>{
+   handleChange=(e)=>{
        e.preventDefault()
-       const option= e.target.value
-        /*const {dispatch}=this.props
-        dispatch(handleQuestionAnswer(option))
-        this.setState(()=>({option:option}))*/
+       let {option}= e.target.value
+      /* this.setState(()=>({option:option,
+       toPoll:false}))*/
         console.log(option)
        }
+
+       
+
+
+
+     /*  handleSubmit=(e)=>{
+        e.preventDefault()
+        let {option}=this.state
+        const{dispatch}=this.props
+ 
+        
+        dispatch(handleQuestionAnswer(option))
+        this.setState(()=>({option:option, toPoll:true}))
+    }*/
+ 
+
 
   
 
@@ -52,13 +67,13 @@ class UnAnsQ extends Component{
            </div>
 
             <div className='actual_question'>
-                <form onSubmit={this.handleChange}>
-             <label for="one">{question.optionOne.text}</label>
-             <input type="radio"  name ="vote"  id="one" value={question.optionOne}/>
+                <form  onChange={this.optionChange}>
+             <label >{question.optionOne.text}</label>
+             <input type="radio"  name ="vote"  id="one" value={question.optionOne} onChange={this.handleChange}/>
              <p className="or">or</p>
-             <label for="two">{question.optionTwo.text}?</label>
+             <label >{question.optionTwo.text}?</label>
              <input type="radio" name="vote" id="two" value={question.optionTwo}/>
-             <button className ="view_poll" type="submit" >Save Answer</button>
+             <button className ="view_poll" type="submit" onClick={this.handleSubmit} onChange={this.handleChange} >Save Answer</button>
              </form>
             </div>
            
