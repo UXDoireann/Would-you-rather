@@ -5,16 +5,22 @@ import {handleQuestionAnswer} from '../actions/shared'
 
 class UnAnsQ extends Component{
 
+
+
     state={
-        option:'',
-        //toPoll:false
+        choice:'',
+        toPoll:false
     }
+
+   
+
+   
 
    handleChange=(e)=>{
        e.preventDefault()
-       let {option}= e.target.value
-      /* this.setState(()=>({option:option,
-       toPoll:false}))*/
+       let option= e.target.value
+      this.setState(()=>({choice:option,
+       toPoll:false}))
         console.log(option)
        }
 
@@ -22,15 +28,22 @@ class UnAnsQ extends Component{
 
 
 
-     /*  handleSubmit=(e)=>{
+     handleSubmit=(e)=>{
         e.preventDefault()
-        let {option}=this.state
-        const{dispatch}=this.props
+        const{dispatch, questions, loggedInUser}=this.props
+        const{id}=this.props.match.params
+        const question = this.props.questions[id]
+        let option = e.target.value
+        this.setState(()=>({choice:option, toPoll:false}))
+        dispatch(handleQuestionAnswer({
+            authedUser:loggedInUser,
+            qid: question.id,
+            answer:this.state.choice
+        }))
+
  
-        
-        dispatch(handleQuestionAnswer(option))
-        this.setState(()=>({option:option, toPoll:true}))
-    }*/
+    
+    }
  
 
 
@@ -69,11 +82,11 @@ class UnAnsQ extends Component{
             <div className='actual_question'>
                 <form  onChange={this.optionChange}>
              <label >{question.optionOne.text}</label>
-             <input type="radio"  name ="vote"  id="one" value={question.optionOne} onChange={this.handleChange}/>
+             <input type="radio"  name ="vote"  id="one" value="optionOne" onChange={this.handleChange}/>
              <p className="or">or</p>
              <label >{question.optionTwo.text}?</label>
-             <input type="radio" name="vote" id="two" value={question.optionTwo}/>
-             <button className ="view_poll" type="submit" onClick={this.handleSubmit} onChange={this.handleChange} >Save Answer</button>
+             <input type="radio" name="vote" id="two" value="optionTwo" onChange={this.handleChange}/>
+             <button className ="view_poll" type="submit" onClick={this.handleSubmit}  >Save Answer</button>
              </form>
             </div>
            
@@ -84,7 +97,7 @@ class UnAnsQ extends Component{
     }
 }
 
-function mapStateToProps({questions, users}){
+function mapStateToProps({questions, users, loggedInUser}){
 
     
     
@@ -93,6 +106,7 @@ function mapStateToProps({questions, users}){
     return{
         questions,
         users,
+        loggedInUser
        
        
 

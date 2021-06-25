@@ -15,7 +15,6 @@ class Login extends Component{
 
     handleChange=(e)=>{
         const loggedInUser=e.target.value
-        const {dispatch}=this.props
         this.setState(()=>({loggedInUser:loggedInUser,
         toHome:false}))
         console.log(loggedInUser)

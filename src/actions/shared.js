@@ -23,15 +23,15 @@ export function handleInitialData(){
     }
 }
 
-export function handleQuestionAnswer(){
+export function handleQuestionAnswer({authedUser, qid, answer}){
     return(dispatch)=>{
-       dispatch(showLoading())
-       return saveQuestionAnswer()
-        .then(({questionId,loggedInUser, answer, userId })=>{
-            dispatch(saveAnswer(questionId, loggedInUser, answer))
-            dispatch(saveUserAnswer(userId, answer))
+        dispatch(showLoading())
+        return saveQuestionAnswer({authedUser, qid, answer})
+        .then(()=>{
+            dispatch(saveAnswer({authedUser, qid, answer}))
+            dispatch(saveUserAnswer({authedUser, qid, answer}))
+            dispatch(hideLoading())
         })
     }
-
 }
 

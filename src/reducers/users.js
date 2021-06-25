@@ -5,18 +5,18 @@ export default function users (state={}, action){
      case RECEIVE_USERS:
          return{
              ...state,
-             ...action.users
+             ...action.users 
          }
-        /* case SAVE_USER_ANSWER:
+        case SAVE_USER_ANSWER:
               return  {...users,
-              [authedUser]: {
-                ...users[authedUser],
+              [action.authedUser]: {
+                ...users[action.authedUser],
                 answers: {
-                  ...users[authedUser].answers,
-                  [qid]: answer
+                  ...users[action.authedUser].answers,
+                  [action.qid]: action.answer
                 }
               }
-            }*/
+            }
          default:
              return state
  }
