@@ -9,12 +9,12 @@ export default function questions(state={}, action){
             }
             case SAVE_QUESTION_ANSWER:
                 return{
-                    ...questions,
+                    ...state,
                     [action.qid]: {
-                      ...questions[action.qid],
+                      ...state[action.qid],
                       [action.answer]: {
-                        ...questions[action.qid][action.answer],
-                        votes: questions[action.qid][action.answer].votes.concat([action.authedUser])
+                        ...state[action.qid][action.answer],
+                        votes: state[action.qid][action.answer].votes.concat([action.authedUser])
                       }
                     }
                   }

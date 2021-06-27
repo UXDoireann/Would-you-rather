@@ -1,6 +1,7 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
 import {handleQuestionAnswer} from '../actions/shared'
+import {Redirect} from 'react-router-dom'
 
 
 class UnAnsQ extends Component{
@@ -34,7 +35,7 @@ class UnAnsQ extends Component{
         const{id}=this.props.match.params
         const question = this.props.questions[id]
         let option = e.target.value
-        this.setState(()=>({choice:option, toPoll:false}))
+        this.setState(()=>({choice:option, toPoll:true}))
         dispatch(handleQuestionAnswer({
             authedUser:loggedInUser,
             qid: question.id,
@@ -63,7 +64,9 @@ class UnAnsQ extends Component{
       
 
 
-      
+        if(this.state.toPoll===true){
+            return<Redirect to ='/poll'/>
+        }
 
         
 
