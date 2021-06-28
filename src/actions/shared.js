@@ -25,12 +25,13 @@ export function handleInitialData(){
 
 export function handleQuestionAnswer({authedUser, qid, answer}){
     return(dispatch)=>{
-        dispatch(showLoading())
+        
+       dispatch(showLoading())
         return saveQuestionAnswer({authedUser, qid, answer})
         .then(()=>{
             dispatch(saveAnswer(authedUser, qid, answer))
             dispatch(saveUserAnswer(authedUser, qid, answer))
-            dispatch(hideLoading())
+           dispatch(hideLoading())
         })
     }
 }

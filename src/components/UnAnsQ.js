@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux' 
 import {handleQuestionAnswer} from '../actions/shared'
 import {Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 class UnAnsQ extends Component{
@@ -65,7 +66,7 @@ class UnAnsQ extends Component{
 
 
         if(this.state.toPoll===true){
-            return<Redirect to ='/poll'/>
+            return<Redirect to ={`/poll/${id}`}/>
         }
 
         
@@ -89,7 +90,9 @@ class UnAnsQ extends Component{
              <p className="or">or</p>
              <label >{question.optionTwo.text}?</label>
              <input type="radio" name="vote" id="two" value="optionTwo" onChange={this.handleChange}/>
+        
              <button className ="view_poll" type="submit" onClick={this.handleSubmit}  >Save Answer</button>
+            
              </form>
             </div>
            

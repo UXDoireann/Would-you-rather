@@ -1,11 +1,16 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
+import {Redirect} from 'react-router-dom'
 
 
 class Poll extends Component{
 
 
     render(){
+
+        if(this.props.loggedInUser===null){
+            return<Redirect to ='/error'/>
+        }
 
         const{users, loggedInUser} = this.props
        

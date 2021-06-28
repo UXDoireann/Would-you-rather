@@ -13,7 +13,7 @@ class Dashboard extends Component{
    
     
     render(){
-
+ console.log(this.props.questions)
 
         if(this.props.loggedInUser===null){
             return<Redirect to ='/error'/>
@@ -76,7 +76,8 @@ class Dashboard extends Component{
     }
 }
 
-function mapStateToProps({questions, users, loggedInUser}){
+const mapStateToProps = (state)=>{
+ 
 
 
  // questions = Object.keys(questions).sort((a, b)=>questions[b].timestamp-questions[a].timestamp)
@@ -84,12 +85,12 @@ function mapStateToProps({questions, users, loggedInUser}){
  
     
  return{
-        users,
-        questions,
-        loggedInUser
+        users:state.users,
+        questions:state.questions,
+        loggedInUser:state.loggedInUser
       
         
-    }
+ }
 }
 
 export default connect(mapStateToProps)(Dashboard)
