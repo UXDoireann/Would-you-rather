@@ -10,6 +10,10 @@ import {Redirect} from 'react-router-dom'
 
 class Dashboard extends Component{
 
+    state={
+        answered:false,
+    }
+
    
     
     render(){
@@ -23,14 +27,8 @@ class Dashboard extends Component{
 
 
       
-             const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
-            
-    
-             
-         
-
-    
-    const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question))
+            const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
+            const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question))
  
 
     
@@ -48,7 +46,10 @@ class Dashboard extends Component{
                        <li key ={id} >
                            <div className="question_card"><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
                         author={this.props.users[this.props.questions[id].author].name}/>
-                         <Link  to={`/questions/${id}`}>
+                        <Link  to={{
+                             pathname:`/questions/${id}` , 
+                             state:{answered:false}
+                        }}>
              <button className="view_poll">View Question</button>
              </Link>
                         </div>
@@ -63,7 +64,10 @@ class Dashboard extends Component{
                        <li key ={id} >
                            <div className="question_card"><Question id={id} userPic={this.props.users[this.props.questions[id].author].avatarURL}
                         author={this.props.users[this.props.questions[id].author].name}/>
-                        <Link  to={`/poll/${id}`}>
+                        <Link  to={{
+                             pathname:`/questions/${id}` , 
+                             state:{answered:true}
+                        }}>
              <button className="view_poll">View Poll</button>
              </Link></div>
                        </li>

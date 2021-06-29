@@ -12,12 +12,7 @@ class Poll extends Component{
             return<Redirect to ='/error'/>
         }
 
-        const{users, loggedInUser} = this.props
-       
-       
-       
-
-        const{id}=this.props.match.params
+        const{users, loggedInUser, id, questions} = this.props
 
         const answer = users[loggedInUser].answers[id]
        
@@ -29,7 +24,7 @@ class Poll extends Component{
 
 
        
-        const question = this.props.questions[id]
+        const question = questions[id]
         const optionOne = question.optionOne
         const optionTwo = question.optionTwo
         const totalVotes = optionOne.votes.length + optionTwo.votes.length
