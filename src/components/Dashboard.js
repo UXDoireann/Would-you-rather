@@ -30,7 +30,7 @@ class Dashboard extends Component{
          
 
     
-    const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question.id))
+    const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question))
  
 
     

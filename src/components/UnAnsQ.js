@@ -36,12 +36,14 @@ class UnAnsQ extends Component{
         const{id}=this.props.match.params
         const question = this.props.questions[id]
         let option = e.target.value
-        this.setState(()=>({choice:option, toPoll:true}))
+       
         dispatch(handleQuestionAnswer({
             authedUser:loggedInUser,
             qid: question.id,
             answer:this.state.choice
-        }))
+        })).then(()=>{
+            this.setState(()=>({choice:option, toPoll:true}))
+        })
 
  
     
