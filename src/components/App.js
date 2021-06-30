@@ -11,6 +11,7 @@ import Navig from './Nav'
 import Leaderboard from './Leaderboard';
 import Error from './Error';
 import QuestionRender from './QuestionRender';
+import Add from './Add';
 
 
 
@@ -43,6 +44,7 @@ class App extends Component{
           <Route path ='/home' component={Dashboard}/>
           <Route path ='/questions/:id' component={QuestionRender}/>
           <Route path ='/leaderboard' component={Leaderboard}/>
+          <Route path ='/add' component={Add}/>
           <Route path ='/error' component={Error}/>
           </Switch>
     </div>}

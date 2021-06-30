@@ -1,6 +1,7 @@
 import{getInitialData, saveQuestionAnswer} from '../utils/helper'
-import{receiveUsers,  saveUserAnswer} from './users'
-import {receiveQuestions, saveAnswer} from './questions'
+import { _saveQuestion} from '../utils/_DATA'
+import{receiveUsers,  saveUserAnswer, saveUserQuestion} from './users'
+import {receiveQuestions, saveAnswer, addQuestion} from './questions'
 import {setLoggedInUser} from './loggedInUser'
 import {logOutUser} from './loggedInUser'
 import {showLoading, hideLoading} from 'react-redux-loading'
@@ -35,4 +36,19 @@ export function handleQuestionAnswer({authedUser, qid, answer}){
         })
     }
 }
+
+
+export function handleNewQuestion(optionOneText, optionTwoText){
+    return(dispatch, getState)=>{
+       const{loggedInUser}=getState()
+        dispatch(showLoading())
+        return _saveQuestion({optionOneText, optionTwoText, author:loggedInUser})
+        .then(question=>{
+            dispatch(addQuestion(question))
+            dispatch(saveUserQuestion(question))
+            dispatch(hideLoading())
+        })
+    }
+}
+    
 

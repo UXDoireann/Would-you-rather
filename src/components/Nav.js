@@ -43,6 +43,11 @@ return(
              </NavLink>
             </li>
             <li>
+                <NavLink to ="/add" exact className='link'>
+                    Add New Question
+                </NavLink>
+                </li>
+            <li>
                 <Navbar.Text>
                  {this.props.loggedInUser!==null?(
                      <div className ="who">

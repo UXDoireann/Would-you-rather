@@ -1,7 +1,7 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
 import {handleQuestionAnswer} from '../actions/shared'
-import {Redirect} from 'react-router-dom'
+
 
 
 
@@ -11,7 +11,7 @@ class UnAnsQ extends Component{
 
     state={
         choice:'',
-        toPoll:false
+      
     }
 
    
@@ -22,7 +22,8 @@ class UnAnsQ extends Component{
        e.preventDefault()
        let option= e.target.value
       this.setState(()=>({choice:option,
-       toPoll:false}))
+     
+    }))
         console.log(option)
        }
 
@@ -41,9 +42,7 @@ class UnAnsQ extends Component{
             authedUser:loggedInUser,
             qid: question.id,
             answer:this.state.choice
-        })).then(()=>{
-            this.setState(()=>({toPoll:true}))
-        })
+        }))
 
  
     
@@ -65,9 +64,9 @@ class UnAnsQ extends Component{
       
 
 
-        if(this.state.toPoll===true){
+       /* if(this.state.toPoll===true){
             return<Redirect to ={`/question/${id}`}/>
-        }
+        }*/
 
         
 
