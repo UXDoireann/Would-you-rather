@@ -26,7 +26,9 @@ const handleLogOut=(e)=>{
 
 return(
     <nav className = 'nav'>
+        <div className="nave">
     <ul className = 'nav_list'>
+        
     <li>
  <NavLink to = "/home" exact className='link' >
         Home
@@ -37,17 +39,21 @@ return(
             Leaderboard
         </NavLink>
     </li>
-        <li>
-            <NavLink to ="/" exact className='link' >
-               Log in
-             </NavLink>
-            </li>
+        
             <li>
                 <NavLink to ="/add" exact className='link'>
                     Add New Question
                 </NavLink>
                 </li>
-            <li>
+                <li>
+            <NavLink to ="/" exact className='link' >
+               Log in
+             </NavLink>
+            </li>
+                </ul>
+                </div>
+                <div className="navlog">
+            
                 <Navbar.Text>
                  {this.props.loggedInUser!==null?(
                      <div className ="who">
@@ -57,11 +63,12 @@ return(
                      </div>
                  ):null}
                 </Navbar.Text>
-            </li>
+            
+            </div>
           
     
 
-    </ul>
+    
     </nav>
 
 

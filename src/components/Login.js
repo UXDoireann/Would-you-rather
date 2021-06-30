@@ -55,10 +55,11 @@ class Login extends Component{
 
 
 <div className="loggy" >
+    <div className ="loggytwo">
     <div className="intro">
     <h3>Welcome to:</h3>
     <h1>"Would you Rather..?"</h1>
-    <p className="tagline">Enjoyed by deep thinkers everywhere!</p>
+  
     </div>
    
      
@@ -82,7 +83,7 @@ class Login extends Component{
 
 
 
-
+</div>
 </div>
         )
     }

@@ -17,6 +17,7 @@ import Add from './Add';
 
 
 
+
 class App extends Component{
 
 
@@ -34,7 +35,8 @@ class App extends Component{
     <Router>
     <Fragment>
       <LoadingBar/>
-     <div className = 'container'>
+     <div className = 'container' >
+       <div className='opaque'>
        <Navig/>
        {this.props.loading===true
        ?null
@@ -48,6 +50,7 @@ class App extends Component{
           <Route path ='/error' component={Error}/>
           </Switch>
     </div>}
+    </div>
     </div>
      </Fragment>
     </Router>

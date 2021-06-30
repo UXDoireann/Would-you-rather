@@ -8,19 +8,26 @@
   border-bottom:1px solid #f1d0d0;
 }
 
-.nav_list{
-  display:flex;
-  flex-direction:row;
-  justify-content: space-evenly;
-  text-decoration: none;
-  font-family:'Tangerine';
- 
-
+.login{
+  background-color: rgba(252, 248, 248, 0.733);
 }
 
 .link{
   text-decoration: none;
 }
+
+.loggy{
+  background-image:'url(../background.jpg)';
+  background-size:cover;
+  background-repeat:none;
+}
+
+.loggytwo{
+  background-color: rgba(255, 255, 255, 0.781);
+  width:100vw;
+}
+
+
 
 
  
@@ -47,6 +54,56 @@
 
 
 @media (max-width:1000px) {
+
+  .intro{
+    height:35vh;
+    margin-top:1vh;
+    margin-bottom:1vh;
+  }
+
+  .opaque{
+    background-color: rgba(252, 248, 248, 0.781);
+  }
+
+  .loggy{
+    height:100vh;
+  }
+
+  .loggytwo{
+    height:100vh;
+  }
+
+.nav{
+  display:flex;
+  flex-direction: row;
+}
+  
+.nave{
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  text-decoration: none;
+  font-family:'Tangerine';
+  font-size:20px;
+ 
+
+}
+
+.navlog{
+  float:right;
+  margin-top:0%;
+  margin-left:15vw;
+}
+
+.pic{
+  margin-left:5vw;
+}
+
+.logout{
+  margin-left:2vw;
+}
+
+
 
   .error{
     font-family: 'Tangerine';
@@ -132,6 +189,8 @@
     box-shadow:5px 10px 5px 10px rgba(228, 191, 191, 0.4) ;
     background-color: rgb(252, 248, 248);
   }
+
+  
 
   .new_question_card{
     width:90vw;
@@ -245,6 +304,7 @@
     margin-left:5vw;
     padding-top:2vh;
     padding-bottom:2vh;
+    margin-top:2vh;
   }
 
 
@@ -272,11 +332,35 @@
 }
 
 
+
+
 }
 
 
 
 @media(min-width:1001px){
+
+  .loggytwo{
+    display:flex;
+    flex-direction: row;
+  }
+
+  
+.nav{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+  text-decoration: none;
+  font-family:'Tangerine';
+ 
+
+}
+
+.nave{
+  display:flex;
+  flex-direction: row;
+
+}
 
   .error{
     font-family: 'Tangerine';

@@ -78,7 +78,7 @@ class Add extends Component{
        <input className="add" type="text" placeholder="write second option here" onChange={this.handleOptionTwo}></input><br></br>
             </form>
 
-            <button className="view_poll" type="submit" disabled={this.state.optionOneText === "" || this.state.optionTwoText === ""}
+            <button className="login_button" type="submit" disabled={this.state.optionOneText === "" || this.state.optionTwoText === ""}
             onClick={this.handleSubmit}>Add Question</button>
 
         </div>

@@ -34,7 +34,7 @@ class Dashboard extends Component{
     
 
         return(
-            <Tabs>
+            <Tabs className="list">
                 <TabList className="tablist">
                      <Tab className="tab">Unanswered Questions</Tab>
                     <Tab className="tab">Answered Questions</Tab>
