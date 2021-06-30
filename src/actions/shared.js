@@ -42,7 +42,7 @@ export function handleNewQuestion(optionOneText, optionTwoText){
     return(dispatch, getState)=>{
        const{loggedInUser}=getState()
         dispatch(showLoading())
-        return _saveQuestion({optionOneText, optionTwoText, author:loggedInUser})
+        return _saveQuestion(optionOneText, optionTwoText, loggedInUser)
         .then(question=>{
             dispatch(addQuestion(question))
             dispatch(saveUserQuestion(question))

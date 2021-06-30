@@ -51,9 +51,8 @@ class Add extends Component{
          } ))
         this.setState(()=>({optionOne:''}))
         this.setState(()=>({optionTwo:''}))
-        /*.then(()=>{
-            this.setState(()=>({submittedQuestion:true}))
-        })*/
+        this.setState(()=>({submittedQuestion:true}))
+       // .then(()=>{this.setState(()=>({submittedQuestion:true}))})
     }
 
 
