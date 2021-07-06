@@ -8,7 +8,7 @@ class Leaderboard extends Component{
     render(){
 
         if(this.props.loggedInUser===null){
-            return<Redirect to ='/error'/>
+            return<Redirect to ='/'/>
         }
 
 
