@@ -41,7 +41,7 @@ class Login extends Component{
         const users = Object.values(this.props.users)
 
         if(this.state.toHome===true){
-            return<Redirect to ='/home'/>
+            return<Redirect to ='/'/>
         }
 
         

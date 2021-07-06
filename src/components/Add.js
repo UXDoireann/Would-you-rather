@@ -52,18 +52,18 @@ class Add extends Component{
         this.setState(()=>({optionOne:''}))
         this.setState(()=>({optionTwo:''}))
         this.setState(()=>({submittedQuestion:true}))
-       // .then(()=>{this.setState(()=>({submittedQuestion:true}))})
+    
     }
 
 
     render(){
 
         if(this.state.submittedQuestion===true){
-            return<Redirect to ={`/home`}/>
+            return<Redirect to ={`/`}/>
         }
 
         if(this.props.loggedInUser===null){
-            return<Redirect to ='/'/>
+            return<Redirect to ='/login'/>
         }
 
     return(

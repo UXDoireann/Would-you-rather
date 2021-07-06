@@ -20,7 +20,6 @@ class UnAnsQ extends Component{
    
 
    handleChange=(e)=>{
-      // e.preventDefault()
        let option= e.target.value
       this.setState(()=>({choice:option,
      
@@ -85,11 +84,11 @@ class UnAnsQ extends Component{
 
             <div className='actual_question'>
                 <form  onChange={this.optionChange}>
-             <label >{question.optionOne.text}</label>
-             <input type="radio"  name ="vote"  id="one" value="optionOne" onChange={this.handleChange}/>
+             <label >{question.optionOne.text}  <input type="radio"  name ="vote"  id="one" value="optionOne" onChange={this.handleChange}/></label>
+           
              <p className="or">or</p>
-             <label >{question.optionTwo.text}?</label>
-             <input type="radio" name="vote" id="two" value="optionTwo" onChange={this.handleChange}/>
+             <label >{question.optionTwo.text}?  <input type="radio" name="vote" id="two" value="optionTwo" onChange={this.handleChange}/></label>
+           
         
              <button className ="view_poll" type="submit" onClick={this.handleSubmit}  >Save Answer</button>
             

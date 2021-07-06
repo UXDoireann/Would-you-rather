@@ -8,10 +8,8 @@ import {connect} from 'react-redux'
 class Question extends Component{
 
     render(){
-      // console.log(this.props)
 
         const {question} = this.props
-
         const { optionOne, optionTwo} = question
 
         
@@ -42,11 +40,10 @@ class Question extends Component{
 
 function mapStateToProps({ questions, users}, {id}){
     const question = questions[id];
-   // const user = users[question.author];
 
     return{
      question,
-     //user
+    
         
 }
 }

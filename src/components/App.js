@@ -22,13 +22,14 @@ class App extends Component{
 
 
   componentDidMount(){
-    this.props.dispatch(handleInitialData())
+    this.props.handleInitialData()
   }
 
 
 
   render(){
 
+  
  
 
   return (
@@ -41,9 +42,9 @@ class App extends Component{
        {this.props.loading===true
        ?null
       :<div>
-        <Route exact path='/' exact component = {Login}/>
+        <Route exact path='/' component = {Dashboard}/>
               <Switch>
-          <Route exact path ='/home' component={Dashboard}/>
+          <Route exact path ='/login'component={Login}/>
           <Route exact path ='/questions/:id' component={QuestionRender}/>
           <Route exact path ='/leaderboard' component={Leaderboard}/>
           <Route exact path ='/add' component={Add}/>
@@ -65,4 +66,4 @@ function mapStateToProps({users, loggedInUser}){
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {handleInitialData})(App);

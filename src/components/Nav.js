@@ -30,7 +30,7 @@ return(
     <ul className = 'nav_list'>
         
     <li>
- <NavLink to = "/home" exact className='link' >
+ <NavLink to = "/" exact className='link' >
         Home
     </NavLink>
     </li>
@@ -46,7 +46,7 @@ return(
                 </NavLink>
                 </li>
                 <li>
-            <NavLink to ="/" exact className='link' >
+            <NavLink to ="/login" exact className='link' >
                Log in
              </NavLink>
             </li>

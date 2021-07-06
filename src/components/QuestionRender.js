@@ -14,30 +14,28 @@ class QuestionRender extends Component{
 
         
 
-        //let answered=this.props
+       
 
         if(this.props.loggedInUser===null){
             return<Redirect to ='/'/>
         }
 
-        if(!this.props.id){
+        if(this.props.id===null){
             return<Redirect to='/error'/>
         }
     
-      // const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
-       //const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question))
        const{id, answered}=this.props
-       //console.log(unansQ)
+     
  
 
 
         return(
 
-<div>
-{answered===true && (<Poll id={id}/>)}
-{answered===false &&(<UnAnsQ id={id}/>)}
+                   <div>
+                      {answered===true && (<Poll id={id}/>)}
+                      {answered===false &&(<UnAnsQ id={id}/>)}
 
-</div>
+                    </div>
 
         )
     }
