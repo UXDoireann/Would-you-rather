@@ -19,6 +19,10 @@ class QuestionRender extends Component{
         if(this.props.loggedInUser===null){
             return<Redirect to ='/'/>
         }
+
+        if(!this.props.id){
+            return<Redirect to='/error'/>
+        }
     
       // const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
        //const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question))

@@ -6,8 +6,8 @@ Users of this app can: log in (imitate a user - take your pick of some of philos
 
 ### How To Use
 * git clone this repo
-* install npm
+* run: yarn install
 * install dependencies:react-redux, react-thunk, react-router-dom
-* run: npm start
+* run: yarn start
 * app will be available on localhost:3000
 

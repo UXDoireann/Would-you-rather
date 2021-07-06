@@ -41,12 +41,12 @@ class App extends Component{
        {this.props.loading===true
        ?null
       :<div>
-        <Route path='/' exact component = {Login}/>
+        <Route exact path='/' exact component = {Login}/>
               <Switch>
-          <Route path ='/home' component={Dashboard}/>
-          <Route path ='/questions/:id' component={QuestionRender}/>
-          <Route path ='/leaderboard' component={Leaderboard}/>
-          <Route path ='/add' component={Add}/>
+          <Route exact path ='/home' component={Dashboard}/>
+          <Route exact path ='/questions/:id' component={QuestionRender}/>
+          <Route exact path ='/leaderboard' component={Leaderboard}/>
+          <Route exact path ='/add' component={Add}/>
           <Route path ='/error' component={Error}/>
           </Switch>
     </div>}
