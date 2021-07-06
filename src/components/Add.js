@@ -63,7 +63,7 @@ class Add extends Component{
         }
 
         if(this.props.loggedInUser===null){
-            return<Redirect to ='/error'/>
+            return<Redirect to ='/'/>
         }
 
     return(

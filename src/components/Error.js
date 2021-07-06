@@ -5,7 +5,9 @@ class Error extends Component{
     render(){
 
     return(
-        <div className="error">Please log in to continue!</div>
+        <div className="error">404!!!
+        <p>This page does not exist!!</p>
+        </div>
     )
 
     }

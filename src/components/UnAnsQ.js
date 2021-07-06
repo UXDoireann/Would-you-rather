@@ -1,6 +1,7 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux' 
 import {handleQuestionAnswer} from '../actions/shared'
+import {Redirect} from 'react-router-dom'
 
 
 
@@ -19,7 +20,7 @@ class UnAnsQ extends Component{
    
 
    handleChange=(e)=>{
-       e.preventDefault()
+      // e.preventDefault()
        let option= e.target.value
       this.setState(()=>({choice:option,
      
@@ -61,12 +62,12 @@ class UnAnsQ extends Component{
 
 
 
-      
+       if(!id){
+        return<Redirect to='/error'/>
+    }
 
+   
 
-       /* if(this.state.toPoll===true){
-            return<Redirect to ={`/question/${id}`}/>
-        }*/
 
         
 

@@ -8,15 +8,22 @@ class Poll extends Component{
 
     render(){
 
-        if(this.props.loggedInUser===null){
-            return<Redirect to ='/error'/>
-        }
+
+        
 
         const{users, loggedInUser, id, questions} = this.props
-
         const answer = users[loggedInUser].answers[id]
        
         console.log(answer)
+
+        
+        if(loggedInUser===null){
+            return<Redirect to ='/'/>
+        }
+
+        if(!id){
+            return<Redirect to='/error'/>
+        }
 
 
 

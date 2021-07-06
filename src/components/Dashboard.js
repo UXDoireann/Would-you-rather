@@ -20,7 +20,7 @@ class Dashboard extends Component{
  console.log(this.props.questions)
 
         if(this.props.loggedInUser===null){
-            return<Redirect to ='/error'/>
+            return<Redirect to ='/'/>
         }
     
        
@@ -28,7 +28,9 @@ class Dashboard extends Component{
 
       
             const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
+            ansQ.sort((a,b)=>a.timestamp-b.timestamp)
             const unansQ = Object.keys(this.props.questions).filter((question)=>!ansQ.includes(question))
+            unansQ.sort((a,b)=>a.timestamp-b.timestamp)
  
 
     
