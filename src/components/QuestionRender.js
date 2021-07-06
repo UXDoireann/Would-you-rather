@@ -17,7 +17,7 @@ class QuestionRender extends Component{
         //let answered=this.props
 
         if(this.props.loggedInUser===null){
-            return<Redirect to ='/error'/>
+            return<Redirect to ='/'/>
         }
     
       // const ansQ = Object.keys(this.props.users[this.props.loggedInUser].answers)
