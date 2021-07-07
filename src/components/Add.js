@@ -63,7 +63,10 @@ class Add extends Component{
         }
 
         if(this.props.loggedInUser===null){
-            return<Redirect to ='/login'/>
+            return<Redirect to={{
+                pathname: '/login',
+                state: this.props.location,
+              }} />
         }
 
     return(
@@ -77,7 +80,7 @@ class Add extends Component{
        <input className="add" type="text" placeholder="write second option here" onChange={this.handleOptionTwo}></input><br></br>
             </form>
 
-            <button className="login_button" type="submit" disabled={this.state.optionOneText === "" || this.state.optionTwoText === ""}
+            <button className="view_poll" type="submit" disabled={this.state.optionOneText === "" || this.state.optionTwoText === ""}
             onClick={this.handleSubmit}>Add Question</button>
 
         </div>

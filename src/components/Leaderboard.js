@@ -8,7 +8,10 @@ class Leaderboard extends Component{
     render(){
 
         if(this.props.loggedInUser===null){
-            return<Redirect to ='/'/>
+            return<Redirect  to={{
+                pathname: '/login',
+                state: this.props.location,
+              }}/>
         }
 
 

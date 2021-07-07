@@ -20,7 +20,10 @@ class Dashboard extends Component{
  console.log(this.props.questions)
 
         if(this.props.loggedInUser===null){
-            return<Redirect to ='/login'/>
+            return<Redirect  to={{
+                pathname: '/login',
+                state: this.props.location,
+              }}/>
         }
     
        

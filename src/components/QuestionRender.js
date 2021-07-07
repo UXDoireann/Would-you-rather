@@ -16,17 +16,17 @@ class QuestionRender extends Component{
 
        
 
-        if(this.props.loggedInUser===null){
-            return<Redirect to ='/'/>
-        }
-
-        if(this.props.id===null){
-            return<Redirect to='/error'/>
-        }
-    
+ 
+       
        const{id, answered}=this.props
      
- 
+      if(!id){
+        return<Redirect  to={{
+            pathname: '/error',
+            state: this.props.location,
+          }}/>
+    }
+
 
 
         return(
@@ -43,7 +43,20 @@ class QuestionRender extends Component{
 
 function mapStateToProps({questions, users, loggedInUser},props){
 
+    
+
+
     const{id}=props.match.params
+
+   
+
+    if(!loggedInUser){
+        return<Redirect  to={{
+            pathname: '/login',
+          }} />
+    }
+
+
     let answered = Object.keys(users[loggedInUser].answers).includes(id)
     
     
